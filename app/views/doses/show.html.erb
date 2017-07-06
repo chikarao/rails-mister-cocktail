@@ -2,6 +2,7 @@
 <p>Find me in app/views/doses/show.html.erb</p>
 
 <%= @dose.description %>
+<%= @dose.ingredient.name %>
 
 <%= link_to "Edit", edit_dose_path %>
 <%= link_to "Destroy", dose_path(@dose), method: :delete, data: {confirm:"Are you sure you want to delete it?"}%>

@@ -9,6 +9,7 @@ class DosesController < ApplicationController
   end
 
   def new
+    @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
   end
 
@@ -36,7 +37,6 @@ class DosesController < ApplicationController
 
   def destroy
     @dose.destroy
-    redirect_to doses_path
   end
 
   private
