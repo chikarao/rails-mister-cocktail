@@ -1,0 +1,14 @@
+<h1>Doses#index</h1>
+<p>Find me in app/views/doses/index.html.erb</p>
+
+<ul>
+<% @doses.each do |dose| %>
+
+  <li><%= dose.cocktail.name %></li>
+  <li><%= link_to dose.description, dose_path(dose) %></li>
+  <li><%= dose.ingredient.name %></li>
+<% end %>
+
+
+</ul>
+<%= link_to "New", new_dose_path %>

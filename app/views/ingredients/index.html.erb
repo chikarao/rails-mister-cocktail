@@ -1,0 +1,13 @@
+<h1>Ingredients#index</h1>
+<p>Find me in app/views/ingredients/index.html.erb</p>
+
+<ul>
+<% @ingredients.each do |ingredient| %>
+
+  <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
+<% end %>
+
+
+</ul>
+<%= link_to "New", new_ingredient_path %>
+<%= link_to "Home", cocktails_path %>

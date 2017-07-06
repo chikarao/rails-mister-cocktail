@@ -1,0 +1,15 @@
+<h1>Cocktails#show</h1>
+<p>Find me in app/views/cocktails/show.html.erb</p>
+
+<%= @cocktail.name %>
+<ul>
+<% @cocktail.doses.each do |dose| %>
+<li><%= dose.description %> <%= dose.ingredient.name %></li>
+<% end %>
+</ul>
+<%= render 'cocktail_dose_form' %>
+
+<%= link_to "Edit", edit_cocktail_path %>
+<%= link_to "Destroy", cocktail_path(@cocktail), method: :delete, data: {confirm:"Are you sure you want to delete it?"}%>
+
+<%= link_to "home", cocktails_path %>
