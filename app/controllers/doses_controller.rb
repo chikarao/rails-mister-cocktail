@@ -26,7 +26,9 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to @dose.cocktail
     else
-      render 'new'
+       redirect_to @dose.cocktail
+       # needs better solution
+      # render 'new'
     end
   end
 
@@ -37,6 +39,7 @@ class DosesController < ApplicationController
 
   def destroy
     @dose.destroy
+    redirect_to @dose.cocktail
   end
 
   private
